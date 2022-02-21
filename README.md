@@ -22,14 +22,22 @@ After this manual step, ArgoCD via an ApplicationSet are going to create all the
 
 ## Hands-On
 
+### All bootstrapping resources
 ````bash
 oc apply -f bootstrap/.
-
-Your ArgoCD route
-
+````
+### Obtaining your ArgoCD route
+````bash
 oc get route -n openshift-gitops
-
-Your Admin Password
-
+````
+### Obtaining your Admin Password
+````bash
 oc extract secret/openshift-gitops-cluster --to=- -n openshift-gitops
 ````
+
+# Thanks to
+
+- [Argo Project](https://github.com/argoproj)
+- [Red Hat Advanced Cluster Management for Kubernetes](https://www.redhat.com/es/technologies/management/advanced-cluster-management)
+- [Ales Nosek](https://github.com/noseka1)
+- [Dewan Ishtiaque Ahmed](https://github.com/dewan-ahmed)
