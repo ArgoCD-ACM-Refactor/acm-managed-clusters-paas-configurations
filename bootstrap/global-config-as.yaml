@@ -2,26 +2,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: global-configurations
+  name: global-applicationsets
   namespace: openshift-gitops
 spec:
-  generators:
-  - git:
-      repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-all-managed-cluster-config.git
-      revision: all-clusters
-      files:
-      - path: "**/cluster.json"
   template:
     metadata:
-      name: '{{cluster.name}}'
+      name: 'Global Application Set'
     spec:
       project: default
       source:
         repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-managed-clusters-paas-configurations.git
         targetRevision: global-config-as
-        path: global-configurations/
+        path: global-configurations/applicationSet/
       destination:
-        server: '{{cluster.address}}'
+        server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
           prune: true
