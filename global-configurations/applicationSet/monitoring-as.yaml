@@ -8,7 +8,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-all-managed-cluster-config.git
-      revision: all-clusters
+      revision: v1.0.0
       files:
       - path: "**/cluster.json"
   template:
@@ -18,7 +18,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-managed-clusters-paas-configurations.git
-        targetRevision: global-config-as
+        targetRevision: main
         path: global-configurations/monitoring/overlays/{{cluster.name}}
       destination:
         server: '{{cluster.address}}'
