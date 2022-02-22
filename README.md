@@ -14,13 +14,13 @@ The followed repo contains the bootstrapping proccess for a new RHACM cluster, i
   - ManagedClusterSetBinding
   - Placement
   - GitOpsCluster
-  - ArgoCD Application
+  - ArgoCD ApplicationSet
 
 # Manual steps
 
 We try to make only one manual step. The creation of the needed resources to create an ArgoCD instance and intregrate it with RHACM.
 
-After this manual step, ArgoCD via an Application are going to create all the needed ApplicationSet that includes all the configurations.
+After this manual step, ArgoCD via an ApplicationSet are going to create all the needed ApplicationSet that includes all the configurations.
 
 ## Hands-On
 
