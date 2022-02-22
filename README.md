@@ -26,7 +26,7 @@ After this manual step, ArgoCD via an ApplicationSet are going to create all the
 
 ### All bootstrapping resources
 ````bash
-sh bootstrap/bootstrap.sh
+sh bootstrap.sh
 ````
 
 # Thanks to

@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: namespaces-configurations
+  name: gitops-bootstrapper
   namespace: openshift-gitops
 spec:
   generators:

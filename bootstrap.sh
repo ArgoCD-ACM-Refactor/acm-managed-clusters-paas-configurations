@@ -1,6 +1,6 @@
 #!/bin/bash
 
-oc apply -f bootstrap/argocd-instance.yaml
+oc apply -f bootstrap/argocd/argocdinstance-acd.yaml
 
 while [[ $( oc get pods -l  app.kubernetes.io/name=openshift-gitops-server -n openshift-gitops -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do
    sleep 1
@@ -13,17 +13,14 @@ echo "---------------------------------------------------"
 echo "  Integrate ArgoCD with all the managed clusters"
 echo "---------------------------------------------------"
 
-oc apply -f bootstrap/managedclusterset.yaml
-oc apply -f bootstrap/managedclustersetbinding.yaml
-oc apply -f bootstrap/placement.yaml
-oc apply -f bootstrap/gitopsserver.yaml
+oc apply -f bootstrap/acm/.
 
 
 echo "---------------------------------------------------"
 echo "       Deploying the App of ApplicationSet"
 echo "---------------------------------------------------"
 
-oc apply -f bootstrap/global-config-application.yaml
+oc apply -f bootstrap/argocd/gitopsbootstrapper-as.yaml
 
 
 echo "---------------------------------------------------"
