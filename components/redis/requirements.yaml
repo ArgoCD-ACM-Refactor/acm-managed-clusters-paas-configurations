@@ -1,0 +1,4 @@
+dependencies:
+- name: bitnami/redis
+  version: 16.4.0
+  repository: https://charts.bitnami.com/bitnami
