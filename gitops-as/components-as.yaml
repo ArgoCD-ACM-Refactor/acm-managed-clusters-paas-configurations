@@ -13,7 +13,7 @@ spec:
       - path: "**/cluster.json"
   template:
     metadata:
-      name: '{{cluster.name}}-namespaces'
+      name: '{{cluster.name}}-components'
     spec:
       project: default
       source:
