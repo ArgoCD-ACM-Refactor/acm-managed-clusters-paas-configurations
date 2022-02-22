@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-applications.git
         targetRevision: main
-        path: /overlays/{{cluster.name}}
+        path: acm-applications-as
       destination:
         server: '{{cluster.address}}'
       syncPolicy:
