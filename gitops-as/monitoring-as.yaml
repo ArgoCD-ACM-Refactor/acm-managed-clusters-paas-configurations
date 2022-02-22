@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-managed-clusters-paas-configurations.git
         targetRevision: main
-        path: day2-cluster-tasks/monitoring/overlays/{{cluster.name}}
+        path: day2-cluster-config/monitoring/overlays/{{cluster.name}}
       destination:
         server: '{{cluster.address}}'
       syncPolicy:
