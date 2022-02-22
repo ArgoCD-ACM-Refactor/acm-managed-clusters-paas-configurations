@@ -8,7 +8,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/ArgoCD-ACM-Refactor/acm-all-managed-cluster-config.git
-      revision: v1.0.1
+      revision: hub-cluster
       files:
       - path: "hub-cluster/cluster.json"
   template:
